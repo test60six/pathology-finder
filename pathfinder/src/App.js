@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-<div className="jumbotron">PATHFINDER</div>
+<div className="jumbotron"> <img src="./images/logo_pathfinder2.png" alt="logo" width="500" height="75"/> </div>
 <br/>
 <form>
   <div className="form-group">
