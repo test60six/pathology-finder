@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Formies from './Formies.js';
+import Formies from './Formies';
+import Login from './Login';
+import Register from './Register';
+
 
 class App extends Component {
 
@@ -11,9 +14,10 @@ class App extends Component {
 
     return(
       <div id="mainbody">
-          <Formies/>
+          <Register/>
+
      </div>
-s
+
 );
 
 

@@ -5,10 +5,10 @@ import './App.css';
 function Formies(props){
   return(
     <div className="App">
-      <div className="container">
-  <div className="jumbotron"> <img src="./images/logo_pathfinder2.png" alt="logo" width="500" height="75"/> </div>
-  <br/>
+
+
   <div className="row">
+    <div className="col-md-3"></div>
   <div className="col-md-6">
   <form>
   <div className="form-group">
@@ -46,10 +46,12 @@ function Formies(props){
   <input type="text" className="form-control" id="length" placeholder="mm"/>
   </div>
   <button type="submit" className="btn btn-default">Submit</button>
+  <br/>
+    <button type="submit" className="btn btn-default">Complete Submission</button>
   </form>
   </div>
   </div>
-  </div>
+
   </div>
 )};
 
