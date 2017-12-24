@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './index.css';
 
 
 function Formies(props){
@@ -8,8 +9,13 @@ function Formies(props){
 
 
   <div className="row">
-    <div className="col-md-3"></div>
+    <div className="col-md-3">
+
+  </div>
   <div className="col-md-6">
+    <button type="submit" className="btn btn-default">Control Group</button>
+
+  <button type="submit" className="btn btn-default">Treatment Group</button>
   <form>
   <div className="form-group">
   <label for="thickness">Epidermal Thickness</label>

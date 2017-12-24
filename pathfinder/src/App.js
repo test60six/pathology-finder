@@ -4,6 +4,7 @@ import './App.css';
 import Formies from './Formies';
 import Login from './Login';
 import Register from './Register';
+import Results from './Results'
 
 
 class App extends Component {
@@ -14,7 +15,9 @@ class App extends Component {
 
     return(
       <div id="mainbody">
-          <Register/>
+          <Formies/>
+
+
 
      </div>
 
