@@ -50,8 +50,7 @@ function Formies(props){
   <input type="text" className="form-control" id="length" placeholder="mm"/>
   </div>
   <button type="submit" className="btn btn-default">Submit</button>
-  <br/>
-    <button type="submit" className="btn btn-default">Complete Submission</button>
+  <button type="submit" className="btn btn-default">Complete Submission</button>
   </form>
   </div>
   </div>
