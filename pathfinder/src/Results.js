@@ -5,9 +5,13 @@ import './index.css';
 
 function Results (props){
   return(
-    <div>HIGH CHARTS RESULTS SHOULD DUMP HERE, RENDER THROUGH App.js div"mainbody"
-
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+    <div className="field">HIGH CHARTS RESULTS SHOULD DUMP HERE, RENDER THROUGH App.js div"mainbody"</div>
     </div>
+    </div>
+  </div>
   )};
 
 

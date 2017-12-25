@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import './index.css';
-
 
 
 function Register(props){
@@ -9,7 +7,7 @@ function Register(props){
     <div className="row">
       <div className="col-md-3"></div>
       <div className="col-md-6">
-    <form>
+    <form className="field">
   <div className="form-group">
     <label for="Name">Full Name</label>
     <input type="Name" className="form-control" id="Name" placeholder="Name Dr. Etc"/>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './index.css';
 
 
 function Formies(props){
@@ -8,15 +7,14 @@ function Formies(props){
     <div className="App">
 
 
-  <div className="row">
-    <div className="col-md-3">
 
-  </div>
+
+  <div className="row">
+    <div className="col-md-3"></div>
   <div className="col-md-6">
     <button type="submit" className="btn btn-default">Control Group</button>
-
-  <button type="submit" className="btn btn-default">Treatment Group</button>
-  <form>
+    <button type="submit" className="btn btn-default">Treatment Group</button>
+  <form className="field">
   <div className="form-group">
   <label for="thickness">Epidermal Thickness</label>
   <input type="text" className="form-control" id="thick" placeholder="Score of 1-10"/>
@@ -52,8 +50,7 @@ function Formies(props){
   <input type="text" className="form-control" id="length" placeholder="mm"/>
   </div>
   <button type="submit" className="btn btn-default">Submit</button>
-  <br/>
-    <button type="submit" className="btn btn-default">Complete Submission</button>
+  <button type="submit" className="btn btn-default">Complete Submission</button>
   </form>
   </div>
   </div>
