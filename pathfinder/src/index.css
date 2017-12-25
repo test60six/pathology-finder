@@ -1,7 +1,7 @@
 body {
   background-color: #00121a;
 background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
-color:#210010;
+color:#36000e;
 font-family: 'Signika', sans-serif;
   margin: 0;
   padding: 0;
@@ -11,6 +11,18 @@ font-family: 'Signika', sans-serif;
   padding:20px
 }
 #image{
-  margin-top: 20px;
+
+  margin-top: 50px;
  margin-left: 350px;
+}
+.field{
+  color:white;
+  padding:20px;
+  background-color:#001a2b;
+}
+.form-signin{
+  color:white;
+  padding:20px;
+  background-color:#001a2b;
+
 }

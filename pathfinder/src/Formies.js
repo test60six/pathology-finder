@@ -14,7 +14,7 @@ function Formies(props){
   <div className="col-md-6">
     <button type="submit" className="btn btn-default">Control Group</button>
     <button type="submit" className="btn btn-default">Treatment Group</button>
-  <form>
+  <form className="field">
   <div className="form-group">
   <label for="thickness">Epidermal Thickness</label>
   <input type="text" className="form-control" id="thick" placeholder="Score of 1-10"/>
