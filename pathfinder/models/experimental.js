@@ -3,9 +3,6 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 // Creates a "Experimental" model that matches up with DB
 var Experimental = sequelize.define("experimental", {
-  subject: {
-    type: Sequelize.INTEGER
-  },
   question1: {
     type: Sequelize.INTEGER
   },

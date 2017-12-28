@@ -3,9 +3,6 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 // Creates a "Datapoint" model that matches up with DB
 var Control = sequelize.define("control", {
-  subject: {
-    type: Sequelize.INTEGER
-  },
   question1: {
     type: Sequelize.INTEGER
   },
