@@ -22,9 +22,12 @@ function Login(props){
    <br/>
    <button className="btn btn-lg btn-block" type="submit">Register</button>
      </div>
-     <div classname="col-md-4"></div>
-     </div>
+   </div>
    </form>
+   <br/>
+   <div className= "row">
+   <div className="col-md-4"><img src="./images/histo1.jpg" alt="histology image"/></div>
+ </div>
  </div>
 
 

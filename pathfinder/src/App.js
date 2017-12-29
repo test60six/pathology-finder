@@ -15,7 +15,7 @@ class App extends Component {
 
     return(
       <div id="mainbody">
-          <Results/>
+      <Register/>
 
 
 
