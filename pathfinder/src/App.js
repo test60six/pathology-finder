@@ -5,6 +5,12 @@ import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Results from "./pages/Results.js";
 import './App.css';
+import Formies from './Formies';
+import Login from './Login';
+import Register from './Register';
+import Results from './Results'
+
+
 
 const App = () =>
   <Router>

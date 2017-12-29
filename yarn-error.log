@@ -1,0 +1,54 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js version
+
+PATH: 
+  C:\Users\drg59\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\drg59\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Google\Google Apps Sync;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Heroku\bin;C:\Users\drg59\AppData\Roaming\npm;C:\Users\drg59\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  6.11.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "pathology-finder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/test60six/pathology-finder.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/test60six/pathology-finder/issues"
+    },
+    "homepage": "https://github.com/test60six/pathology-finder#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:121045:13)
+      at emitNone (events.js:86:13)
+      at Interface.emit (events.js:185:7)
+      at Interface._ttyWrite (readline.js:726:16)
+      at ReadStream.onkeypress (readline.js:120:10)
+      at emitTwo (events.js:106:13)
+      at ReadStream.emit (events.js:191:7)
+      at emitKeys (internal/readline.js:389:14)
+      at next (native)
+      at ReadStream.onData (readline.js:972:36)
