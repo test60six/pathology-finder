@@ -1,4 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Formies from "./Formies.js";
+import Register from "./Register.js";
+import Results from "./Results.js";
 import '../App.css';
 import '../index.css';
 
@@ -6,6 +10,18 @@ import '../index.css';
 function Login(props){
   return(
 <div className="container">
+<nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <Link class="navbar-brand" to="/register">Register Page</Link>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><Link to="/login">Login Page</Link></li>
+                    <li><Link to="/form">Form Page</Link></li>
+                    <li><Link to="/results">Results Page</Link></li>
+                  </ul>
+                </div>
+              </nav>
    <form className="form-signin">
     <div className= "row">
       <div className="col-md-4"></div>
