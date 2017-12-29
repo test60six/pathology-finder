@@ -6,12 +6,13 @@ function Formies(props){
   return(
     <div className="App">
 
-
+<div className="container">
 
 
   <div className="row">
-    <div className="col-md-3"></div>
-  <div className="col-md-6">
+    <div className="col-md-2"></div>
+
+  <div className="col-md-8">
     <button type="submit" className="btn btn-default">Control Group</button>
     <button type="submit" className="btn btn-default">Treatment Group</button>
   <form className="field">
@@ -52,8 +53,11 @@ function Formies(props){
   <button type="submit" className="btn btn-default">Submit</button>
   <button type="submit" className="btn btn-default">Complete Submission</button>
   </form>
+  <div className="col-md-4"></div>
   </div>
+
   </div>
+</div>
 
   </div>
 )};
