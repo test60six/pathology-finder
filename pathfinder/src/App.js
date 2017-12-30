@@ -5,11 +5,8 @@ import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Results from "./pages/Results.js";
 import './App.css';
-import Formies from './Formies';
-import Login from './Login';
-import Register from './Register';
-import Results from './Results'
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 class App extends Component {
@@ -37,6 +34,8 @@ class App extends Component {
 =======
 >>>>>>> 2f39a178781bdd27201ee5709870443c024d5138
 
+=======
+>>>>>>> 70c632f84ee05d87dd4254fa324804d5867e9450
 const App = () =>
   <Router>
     <div>
@@ -50,5 +49,9 @@ const App = () =>
     </div>
   </Router>;
 
+<<<<<<< HEAD
 export default App;
 
+=======
+export default App;
+>>>>>>> 70c632f84ee05d87dd4254fa324804d5867e9450
