@@ -5,14 +5,16 @@ color:#36000e;
 font-family: 'Signika', sans-serif;
   margin: 0;
   padding: 0;
+
 }
 .btn{
  margin:10px;
   padding:20px
 }
 #image{
-  margin-top: 20px;
- margin-left: 450px;
+
+  margin-top: 50px;
+ margin-left: 350px;
 }
 .field{
   color:white;
@@ -23,4 +25,4 @@ font-family: 'Signika', sans-serif;
   color:white;
   padding:20px;
   background-color:#001a2b;
-}
+
