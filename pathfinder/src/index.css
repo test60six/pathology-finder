@@ -1,23 +1,21 @@
 body {
   background-color: #00121a;
-background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
-color:#36000e;
-font-family: 'Signika', sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  color:#36000e;
+  font-family: 'Signika', sans-serif;
   margin: 0;
   padding: 0;
 
 }
 .btn{
- margin:10px;
+  color:#666;
+  margin:10px;
   padding:20px
 }
 #image{
-<<<<<<< HEAD
 
-=======
->>>>>>> 70c632f84ee05d87dd4254fa324804d5867e9450
   margin-top: 20px;
- margin-left: 450px;
+  margin-left: 450px;
 }
 .field{
   color:white;
@@ -28,8 +26,13 @@ font-family: 'Signika', sans-serif;
   color:white;
   padding:20px;
   background-color:#001a2b;
-<<<<<<< HEAD
-
-=======
+  
 }
->>>>>>> 70c632f84ee05d87dd4254fa324804d5867e9450
+
+.panel{
+  background-color:#001a2b;
+  color:#666;
+  margin:10px;
+  padding:20px
+
+}

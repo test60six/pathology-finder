@@ -71,18 +71,19 @@ class Formies extends Component {
   render() {
     return(
       <div className="container">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <Link class="navbar-brand" to="/register">Register Page</Link>
-            </div>
-              <ul class="nav navbar-nav">
-                <li><Link to="/login">Login Page</Link></li>
-                <li><Link to="/form">Form Page</Link></li>
-                <li><Link to="/results">Results Page</Link></li>
-              </ul>
-          </div>
-        </nav>
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+
+             <div className="navbar-header">
+               <Link className="navbar-brand" to="/Dashboard">Your Dashboard</Link>
+             </div>
+             <ul className="nav navbar-nav">
+               <li><Link to="/form">Create Expirement</Link></li>
+               <li><Link to="/results">Your Results</Link></li>
+             </ul>
+             </div>
+
+         </nav>
         <div className="App">
           <div className="row">
             <div className="col-md-3"></div>
