@@ -10,18 +10,7 @@ import '../index.css';
 function Login(props){
   return(
 <div className="container">
-<nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <Link class="navbar-brand" to="/register">Register Page</Link>
-                  </div>
-                  <ul class="nav navbar-nav">
-                    <li><Link to="/login">Login Page</Link></li>
-                    <li><Link to="/form">Form Page</Link></li>
-                    <li><Link to="/results">Results Page</Link></li>
-                  </ul>
-                </div>
-              </nav>
+
    <form className="form-signin">
     <div className= "row">
       <div className="col-md-4"></div>
@@ -41,6 +30,13 @@ function Login(props){
      <div classname="col-md-4"></div>
      </div>
    </form>
+   <br/>
+   <br/>
+ <br/>
+ 
+   <div className="foot">
+   <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+</div>
  </div>
 
 

@@ -16,7 +16,7 @@ class Results extends Component {
 	graphChart = event => {
 		var controlChart = Highcharts.chart('container', {
 			chart: {
-				type: 'bar'
+				type: 'column'
 			},
 			title: {
 				text: 'Results'
@@ -43,50 +43,33 @@ class Results extends Component {
 		return(
 			<div className="container">
 				<nav className="navbar navbar-default">
-	        <div className="container-fluid">
+    <div className="container-fluid">
+        <ul className="nav navbar-nav globalNavbar">
+            <li><Link to="/dashboard">Your Dashboard</Link></li>
+            <li><Link to="/form">Create Expirement</Link></li>
+            <li><Link to="/results">Your Results</Link></li>
+        </ul>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"> <span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+    </div>
+</nav>
 
-	           <div className="navbar-header">
-	             <Link className="navbar-brand" to="/Dashboard">Your Dashboard</Link>
-	           </div>
-	           <ul className="nav navbar-nav">
-	             <li><Link to="/form">Create Expirement</Link></li>
-	             <li><Link to="/results">Your Results</Link></li>
-	           </ul>
-	           </div>
-
-	       </nav>
-			
 				<div className="row">
 					<div className="col-md-12">
-						<div id='container' className="field"></div>
+						<div id='container' className="field">Please Click The Button Below To Chart Your Results</div>
 						<br/>
 						<button type="submit" className="btn btn-default" onClick={this.graphChart}>Chart Results</button>
+
 					</div>
-				</div>
+					</div>
+					<br/>
+				<br/>
+					<div className="foot">
+						<footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+					</div>
+
 			</div>
-		);
+			);
+		}
 	}
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default Results;
+	export default Results;

@@ -72,18 +72,15 @@ class Formies extends Component {
     return(
       <div className="container">
         <nav className="navbar navbar-default">
-          <div className="container-fluid">
-
-             <div className="navbar-header">
-               <Link className="navbar-brand" to="/Dashboard">Your Dashboard</Link>
-             </div>
-             <ul className="nav navbar-nav">
-               <li><Link to="/form">Create Expirement</Link></li>
-               <li><Link to="/results">Your Results</Link></li>
-             </ul>
-             </div>
-
-         </nav>
+    <div className="container-fluid">
+        <ul className="nav navbar-nav globalNavbar">
+            <li><Link to="/dashboard">Your Dashboard</Link></li>
+            <li><Link to="/form">Create Expirement</Link></li>
+            <li><Link to="/results">Your Results</Link></li>
+        </ul>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"> <span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+    </div>
+</nav>
         <div className="App">
           <div className="row">
             <div className="col-md-3"></div>
