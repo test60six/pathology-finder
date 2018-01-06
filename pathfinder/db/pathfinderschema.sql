@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS pathfinderDB;
+CREATE DATABASE pathfinderDB;
+USE pathfinderDB;
