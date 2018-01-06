@@ -1,26 +1,67 @@
 body {
   background-color: #00121a;
-background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
-color:#36000e;
-font-family: 'Signika', sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  color:#36000e;
+  font-family: 'Signika', sans-serif;
   margin: 0;
   padding: 0;
 }
 .btn{
- margin:10px;
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+  color:#666;
+  margin:10px;
   padding:20px
 }
 #image{
   margin-top: 20px;
- margin-left: 450px;
+  margin-left: 400px;
 }
 .field{
-  color:white;
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+  color:#666;
   padding:20px;
   background-color:#001a2b;
 }
 .form-signin{
-  color:white;
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+  color:#666;
   padding:20px;
   background-color:#001a2b;
+}
+.panel{
+  background-color:#001a2b;
+  color:#666;
+  margin:10px;
+  padding:20px;
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+}
+.foot{
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+  text-align:center;
+  background-color:#001a2b;
+  color:#666;
+  margin:0 auto;
+  padding:20px;
+}
+.img-responsive{
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+}
+.logoutButton {
+  color:white;
+  padding:9px 18px 9px 18px;
+}
+.globalNavbar li{
+  padding:5px 0px;
 }

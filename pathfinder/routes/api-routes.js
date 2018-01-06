@@ -30,4 +30,26 @@ module.exports = function(app) {
       question7: req.body.question7
     });
   });
+
+  app.get("/api/control", function(req, res) {
+    Control.findAll({})
+    .then(function(data) {
+      res.json(data);
+    })
+  })
+
+  app.get("/api/treatment", function(req, res) {
+    Experimental.findAll({})
+    .then(function(data) {
+      res.json(data);
+    })
+  })
+
+  app.get("api/login", function(req, res) {
+    User.findOne({ where: {email: req.body.email, password: req.body.password} })
+    .then(function(data) {
+      console.log(data);
+      return data;
+    })
+  })
 }

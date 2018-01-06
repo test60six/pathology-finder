@@ -3,13 +3,10 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 // Creates a "User" model that matches up with DB
 var User = sequelize.define("user", {
-  userID: {
-    type: Sequelize.INTEGER
-  },
-  username: {
+  email: {
     type: Sequelize.STRING
   },
-  email: {
+  password: {
     type: Sequelize.STRING
   },
 }, {

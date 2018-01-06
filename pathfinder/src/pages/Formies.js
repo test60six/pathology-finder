@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Dashboard from "./Dashboard.js";
 import Login from "./Login.js";
 import Register from "./Register.js";
 import Results from "./Results.js";
@@ -71,18 +72,16 @@ class Formies extends Component {
   render() {
     return(
       <div className="container">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <Link class="navbar-brand" to="/register">Register Page</Link>
-            </div>
-              <ul class="nav navbar-nav">
-                <li><Link to="/login">Login Page</Link></li>
-                <li><Link to="/form">Form Page</Link></li>
-                <li><Link to="/results">Results Page</Link></li>
-              </ul>
-          </div>
-        </nav>
+        <nav className="navbar navbar-default">
+    <div className="container-fluid">
+        <ul className="nav navbar-nav globalNavbar">
+            <li><Link to="/dashboard">Your Dashboard</Link></li>
+            <li><Link to="/form">Create Expirement</Link></li>
+            <li><Link to="/results">Your Results</Link></li>
+        </ul>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+    </div>
+</nav>
         <div className="App">
           <div className="row">
             <div className="col-md-3"></div>
@@ -130,6 +129,11 @@ class Formies extends Component {
               </div>
             </div>
         </div>
+        <br/>
+                <br/>
+                    <div className="foot">
+                        <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+                    </div>
       </div>
     );
   }
