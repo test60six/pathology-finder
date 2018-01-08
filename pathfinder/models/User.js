@@ -3,14 +3,44 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 // Creates a "User" model that matches up with DB
 var User = sequelize.define("user", {
-  email: {
-    type: Sequelize.STRING
-  },
-  password: {
-    type: Sequelize.STRING
-  },
-}, {
-  timestamps: true
+	firstname: {
+            type: Sequelize.STRING,
+            notEmpty: true
+        },
+ 
+    lastname: {
+        type: Sequelize.STRING,
+        notEmpty: true
+    },
+
+    username: {
+        type: Sequelize.TEXT
+    },
+
+    email: {
+        type: Sequelize.STRING,
+        validate: {
+            isEmail: true
+        }
+    },
+
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+
+    last_login: {
+        type: Sequelize.DATE
+    },
+
+    institution: {
+    	type: Sequelize.STRING
+	},
+
+    status: {
+        type: Sequelize.ENUM('active', 'inactive'),
+        defaultValue: 'active'
+    }
 });
 // Syncs with DB
 User.sync();

@@ -17,6 +17,9 @@ export default {
   },
   // User Login
   loginUser: function(data) {
-  	return axios.get("api/login", data);
+  	return axios.get("/api/login", data);
+  },
+  registerUser: function(data) {
+  	return axios.post("/register", data);
   }
 };

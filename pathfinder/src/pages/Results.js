@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Highcharts from 'highcharts';
 import Exporting from 'highcharts/modules/exporting';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import API from "../utils/API";
+import API from "../utils/API.js";
 import Dashboard from "./Dashboard.js";
 import Formies from "./Formies.js";
 import Login from "./Login.js";

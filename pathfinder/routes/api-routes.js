@@ -1,6 +1,7 @@
 var Control = require("../models/Control.js");
 var Experimental = require("../models/Experimental.js");
 var User = require("../models/User.js");
+var passport   = require('passport')
 
 module.exports = function(app) {
 	app.post("/api/control", function(req, res) {
@@ -45,11 +46,35 @@ module.exports = function(app) {
     })
   })
 
-  app.get("api/login", function(req, res) {
+  app.get("/api/login", function(req, res) {
     User.findOne({ where: {email: req.body.email, password: req.body.password} })
     .then(function(data) {
-      console.log(data);
-      return data;
+      res.json(data);
+    })
+  })
+
+  app.post('/register', passport.authenticate('local-signup', {
+        successRedirect: '/dashboard',
+ 
+        failureRedirect: '/register'
+    }
+));
+
+  app.get('/dashboard',isLoggedIn, authController.dashboard);
+
+  app.get('/logout',authController.logout);
+
+  app.post("/api/register", function(req, res) {
+    User.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      institution: req.body.institution
+    })
+    .then(function(response) {
+      res.json(response);
     })
   })
 }

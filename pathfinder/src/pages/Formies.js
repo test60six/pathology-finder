@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import API from "../utils/API";
+import API from "../utils/API.js";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Dashboard from "./Dashboard.js";
 import Login from "./Login.js";
@@ -73,15 +73,15 @@ class Formies extends Component {
     return(
       <div className="container">
         <nav className="navbar navbar-default">
-    <div className="container-fluid">
-        <ul className="nav navbar-nav globalNavbar">
-            <li><Link to="/dashboard">Your Dashboard</Link></li>
-            <li><Link to="/form">Create Expirement</Link></li>
-            <li><Link to="/results">Your Results</Link></li>
-        </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
-    </div>
-</nav>
+          <div className="container-fluid">
+            <ul className="nav navbar-nav globalNavbar">
+              <li><Link to="/dashboard">Your Dashboard</Link></li>
+              <li><Link to="/form">Create Expirement</Link></li>
+              <li><Link to="/results">Your Results</Link></li>
+            </ul>
+            <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+          </div>
+        </nav>
         <div className="App">
           <div className="row">
             <div className="col-md-3"></div>
@@ -123,17 +123,17 @@ class Formies extends Component {
                     <label htmlFor="length">Length of Rete Ridges</label>
                     <input type="text" className="form-control" id="length" name="question7" onChange={this.handleInputChange} placeholder="mm"/>
                   </div>
-                  <button type="submit" className="btn btn-default" name="question1" onClick={this.handleFormSubmit}>Submit</button>
+                  <button type="submit" className="btn btn-default" name="submitData" onClick={this.handleFormSubmit}>Submit</button>
                   <button type="submit" className="btn btn-default">Complete Submission</button>
                 </form>
               </div>
             </div>
         </div>
         <br/>
-                <br/>
-                    <div className="foot">
-                        <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
-                    </div>
+        <br/>
+        <div className="foot">
+            <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+        </div>
       </div>
     );
   }
