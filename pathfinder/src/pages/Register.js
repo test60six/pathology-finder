@@ -12,7 +12,8 @@ class Register extends Component {
     username: '',
     email: '',
     password: '',
-    institution: ''
+    institution: '',
+    isLoggedIn: ''
   };
 
   handleInputChange = event => {
@@ -33,11 +34,24 @@ class Register extends Component {
       password: this.state.password,
       institution: this.state.institution
     })
-    .then(res => console.log(res.data))
+    .then(res => {
+      console.log(res.status);
+      if(res.status === 200) {
+        this.setState({isLoggedIn: true});
+      }
+      console.log(res.data)})
     .catch(err => console.log(err));
   }
 
   render() {
+    if(this.state.isLoggedIn === true) {
+      return(
+        <div>
+          <Route path='/register' component={() => window.location = 'http://localhost:3000/dashboard'} />
+        </div>
+      )
+    }
+    else {
     return(
       <div className="container">
         <div className="row">
@@ -76,6 +90,7 @@ class Register extends Component {
       </div>
     );
   }
+}
 }
 
 export default Register;

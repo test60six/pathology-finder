@@ -20,6 +20,6 @@ export default {
   	return axios.get("/api/login", data);
   },
   registerUser: function(data) {
-  	return axios.post("/register", data);
+  	return axios.post("/api/register", data);
   }
 };

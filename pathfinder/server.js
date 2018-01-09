@@ -15,15 +15,17 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Passport Setup
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized:true})); // session secret
+require('./config/passport.js')(passport, User);
 app.use(passport.initialize());
 app.use(passport.session());
 // Static directory
 app.use(express.static("public"));
 // Routes
-// =============================================================
-require("./routes/api-routes.js")(app);
+// ============================================================
 // passport strategies
-require('./config/passport.js')(passport, User);
+
+require("./routes/api-routes.js")(app);
+
 // test route
 app.get('/test', function(req, res) {
 	res.send('Welcome to Passport with Sequelize');
