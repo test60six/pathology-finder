@@ -25,7 +25,9 @@ function Register(props){
             <label for="institution">Institution</label>
             <input type="text" className="form-control" id="Institution" placeholder="Institution"/>
             <br/>
+            <Link to="/Dashboard">
             <button type="submit" className="btn btn-default">Submit</button>
+            </Link>
 
           </form>
         </div>
@@ -34,7 +36,7 @@ function Register(props){
       </div>
       <br/>
       <div className="foot">
-      <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+      <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick Jones</footer>
   </div>
     </div>
 

@@ -64,7 +64,7 @@ class Results extends Component {
 					<br/>
 				<br/>
 					<div className="foot">
-						<footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+						<footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick Jones </footer>
 					</div>
 
 			</div>

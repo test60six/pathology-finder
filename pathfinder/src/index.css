@@ -71,5 +71,11 @@ body {
   padding:9px 18px 9px 18px;
 }
 .globalNavbar li{
+
   padding:5px 0px;
+}
+.navbar{
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
 }
