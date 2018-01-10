@@ -43,6 +43,15 @@ body {
   border-color: #C0C0C0;
   border-width: 2px;
 }
+.expPanel {
+  background-color:#f5f5f5;
+  color:#666;
+  margin:10px;
+  padding:20px;
+  border-style:inset;
+  border-color: #C0C0C0;
+  border-width: 2px;
+}
 .foot{
   border-style:inset;
   border-color: #C0C0C0;

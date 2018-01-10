@@ -1,50 +1,51 @@
-var Control = require("../models/Control.js");
-var Experimental = require("../models/Experimental.js");
+// var Control = require("../models/Control.js");
+// var Experimental = require("../models/Experimental.js");
 var User = require("../models/User.js");
+var Experiments = require("../models/Experiments.js");
+var Data = require("../models/Data.js");
 var passport   = require('passport')
 
 module.exports = function(app) {
-	app.post("/api/control", function(req, res) {
-    console.log("Control Data:");
+	app.post("/api/new_data", function(req, res) {
     console.log(req.body);
-    Control.create({
-      question1: req.body.question1,
-      question2: req.body.question2,
-      question3: req.body.question3,
-      question4: req.body.question4,
-      question5: req.body.question5,
-      question6: req.body.question6,
-      question7: req.body.question7
-    });
+    Data.create(req.body);
   });
 
-	app.post("/api/treatment", function(req, res) {
-    console.log("Treatment Data:");
+	// app.post("/api/treatment", function(req, res) {
+ //    console.log("Treatment Data:");
+ //    console.log(req.body);
+ //    Experimental.create(req.body);
+ //  });
+
+  app.post("/api/new_experiment", function(req, res) {
     console.log(req.body);
-    Experimental.create({
-      question1: req.body.question1,
-      question2: req.body.question2,
-      question3: req.body.question3,
-      question4: req.body.question4,
-      question5: req.body.question5,
-      question6: req.body.question6,
-      question7: req.body.question7
-    });
+    Experiments.create(req.body)
+    .then(function(data) {
+      return res.status(200).send();
+    })
   });
 
-  app.get("/api/control", function(req, res) {
-    Control.findAll({})
+  app.post("/api/new_data", function(req, res) {
+    console.log(req.body);
+    Data.create(req.body)
+    .then(function(data) {
+      return res.status(200).send();
+    })
+  });
+
+  app.get("/api/experiments", function(req, res) {
+    Experiments.findAll({})
     .then(function(data) {
       res.json(data);
     })
-  })
+  });
 
-  app.get("/api/treatment", function(req, res) {
-    Experimental.findAll({})
-    .then(function(data) {
-      res.json(data);
-    })
-  })
+  // app.get("/api/treatment", function(req, res) {
+  //   Experimental.findAll({})
+  //   .then(function(data) {
+  //     res.json(data);
+  //   })
+  // })
 
   app.get("/api/login", function(req, res) {
     User.findOne({ where: {email: req.body.email, password: req.body.password} })

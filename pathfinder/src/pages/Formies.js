@@ -11,6 +11,7 @@ import '../App.css';
 class Formies extends Component {
 
   state = {
+    group: '',
     question1: '',
     question2: '',
     question3: '',
@@ -18,19 +19,44 @@ class Formies extends Component {
     question5: '',
     question6: '',
     question7: '',
-    isControl: '',
-    isTreatment: ''
+    experimentName: '',
+    userID: 'Eddie'
   };
 
   newControl = event => {
-    this.setState({isControl: true});
-    this.setState({isTreatment: false});
+    if(this.state.experimentName) {
+      this.setState({group: 'control'});
+    }
+    else {alert("Enter an experirment name before you define data type!")}
   };
 
   newTreatment = event => {
-    this.setState({isTreatment: true});
-    this.setState({isControl: false});
+    if(this.state.experimentName) {
+      this.setState({group: 'treatment'});
+    }
+    else {alert("Enter an experirment name before you define a data type!")}
   };
+
+  newExperiment = event => {
+    event.preventDefault();
+    if(this.state.experimentName) {
+    console.log(this.state.experimentName);
+    API.newExperiment({
+      experimentName: this.state.experimentName, 
+      userID: this.state.userID
+    })
+    .then(res => {
+      if(res.status === 200) {
+        alert("Experiment successfully created!")
+      }
+      else {alert("Experiment not created, there was an error!")}
+    })
+    .catch(err => console.log(err));
+  }
+  else {
+    alert("Enter an experirment name to add a new experiment!")
+  }
+}
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -42,31 +68,30 @@ class Formies extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log(this.state);
-    if(this.state.isControl === true && this.state.isTreatment === false) {
-    API.newControl({
-      question1: this.state.question1,
-      question2: this.state.question2,
-      question3: this.state.question3,
-      question4: this.state.question4,
-      question5: this.state.question5,
-      question6: this.state.question6,
-      question7: this.state.question7,
+    if(this.state.experimentName) {
+      if(this.state.group) {
+      API.newData({
+        experimentName: this.state.experimentName,
+        group: this.state.group,
+        question1: this.state.question1,
+        question2: this.state.question2,
+        question3: this.state.question3,
+        question4: this.state.question4,
+        question5: this.state.question5,
+        question6: this.state.question6,
+        question7: this.state.question7,
+      })
+      .then(res => {
+      if(res.status === 200) {
+        alert("Data successfully written!")
+      }
+      else {alert("Data not written, there was an error!")}
     })
-      .catch(err => console.log(err));
+        .catch(err => console.log(err));
+      }
+      else {alert("You need to select Control or Treatment before you submit data");}
     }
-    else if(this.state.isTreatment === true && this.state.isControl === false) {
-      API.newTreatment({
-      question1: this.state.question1,
-      question2: this.state.question2,
-      question3: this.state.question3,
-      question4: this.state.question4,
-      question5: this.state.question5,
-      question6: this.state.question6,
-      question7: this.state.question7,
-    })
-      .catch(err => console.log(err));
-    }
-    else {alert("You need to select Control or Treatment before you submit data");}
+    else {alert("Enter an experirment name to before you can submit data!")}
   };
 
   render() {
@@ -86,6 +111,13 @@ class Formies extends Component {
           <div className="row">
             <div className="col-md-3"></div>
               <div className="col-md-6">
+                <form className="field">
+                <div className="form-group">
+                <label htmlFor="experiment">Create New Experiment</label>
+                <input className="form-control" id="experiment" name="experimentName" onChange={this.handleInputChange} placeholder="Enter Experiment Name"/>
+                <button type="submit" value="submit" className="btn btn-default" onClick={this.newExperiment}>Create Experiment</button>
+                </div>
+                </form>
                 <button type="submit" className="btn btn-default" onClick={this.newControl}>Control Group</button>
                 <button type="submit" className="btn btn-default" onClick={this.newTreatment}>Treatment Group</button>
                 <form className="field">
@@ -136,7 +168,8 @@ class Formies extends Component {
         </div>
       </div>
     );
-  }
 }
+  }
+
 
 export default Formies;
