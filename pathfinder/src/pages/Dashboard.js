@@ -41,7 +41,7 @@ class Dashboard extends Component {
         </ul>
         <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
     </div>
-</nav> 
+</nav>
         <div className="row">
           <div className="col-md-3">
             <img className="img-responsive" src="/images/histo1.jpg" alt="histology picture" />
@@ -52,14 +52,14 @@ class Dashboard extends Component {
             <div className="panel panel-default">
               <div className="panel-heading">Welcome to your dashboard!</div>
               <div className="panel-body">
-                <h3 id="expData" style={{color: 'white'}}>
-                Below you will find a full list of all the experiments you have submitted.  
+                <h3 id="expData" style={{color: '#666'}}>
+                Below you will find a full list of all the experiments you have submitted.
                 Click on an experiment to graph the results!
                 </h3>
                 <br/>
                 {
                   this.state.experiments
-                    ? this.state.experiments.map((experiments) => 
+                    ? this.state.experiments.map((experiments) =>
                       <div className="expPanel" onClick={this.graphResults}>
                         <h3 key={experiments.experimentName.toString()}>
                         Experiment Name:<br/>
@@ -68,7 +68,7 @@ class Dashboard extends Component {
                       </div>
                       )
                     : <div>
-                        <h3 style={{color: 'white'}}>OOPS! Looks like you don't have any experiments! 
+                        <h3 style={{color: '#666'}}>OOPS! Looks like you don't have any experiments!
                         Click on "Create Experiment" in the navbar to submit data for a new experiment!
                         </h3>
                       </div>

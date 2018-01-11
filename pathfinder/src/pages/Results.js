@@ -91,28 +91,35 @@ class Results extends Component {
 	render() {
 		return(
 			<div className="container">
-			<nav className="navbar navbar-default">
-    <div className="container-fluid">
-        <ul className="nav navbar-nav globalNavbar">
-            <li><Link to="/dashboard">Your Dashboard</Link></li>
-            <li><Link to="/form">Create Expirement</Link></li>
-            <li><Link to="/results">Your Results</Link></li>
-        </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
-    </div>
-</nav>
+				<nav className="navbar navbar-default">
+					<div className="container-fluid">
+						<ul className="nav navbar-nav globalNavbar">
+							<li><Link to="/dashboard">Your Dashboard</Link></li>
+							<li><Link to="/form">Create Expirement</Link></li>
+							<li><Link to="/results">Your Results</Link></li>
+						</ul>
+						<button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+					</div>
+				</nav>
 				<div className="row">
 					<div className="col-md-12">
+						<form className="field">
+							<div className="form-group">
+								<input className="form-control" id="experiment" name="experimentName" onChange={this.handleInputChange} placeholder="Enter Experiment Name"/>
+								<button type="submit" value="submit" className=" btn btn-sm" onClick={this.newExperiment}>Get Experiment Data</button>
+							</div>
+						</form>
+						<br/>
 						<div id='container' className="field">Please Click The Button Below To Chart Your Results</div>
 						<br/>
 						<button type="submit" className="btn btn-default" onClick={this.retreiveData}>Chart Results</button>
 					</div>
 				</div>
 				<br/>
-                <br/>
-                    <div className="foot">
-                        <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
-                    </div>
+				<br/>
+				<div className="foot">
+					<footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+				</div>
 			</div>
 		);
 	}

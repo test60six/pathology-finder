@@ -42,7 +42,7 @@ class Formies extends Component {
     if(this.state.experimentName) {
     console.log(this.state.experimentName);
     API.newExperiment({
-      experimentName: this.state.experimentName, 
+      experimentName: this.state.experimentName,
       userID: this.state.userID
     })
     .then(res => {
@@ -115,7 +115,7 @@ class Formies extends Component {
                 <div className="form-group">
                 <label htmlFor="experiment">Create New Experiment</label>
                 <input className="form-control" id="experiment" name="experimentName" onChange={this.handleInputChange} placeholder="Enter Experiment Name"/>
-                <button type="submit" value="submit" className="btn btn-default" onClick={this.newExperiment}>Create Experiment</button>
+                <button type="submit" value="submit" className="btn btn-sm" onClick={this.newExperiment}>Create Experiment</button>
                 </div>
                 </form>
                 <button type="submit" className="btn btn-default" onClick={this.newControl}>Control Group</button>
