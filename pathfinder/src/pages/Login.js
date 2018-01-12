@@ -55,11 +55,17 @@ class Login extends Component {
    <div className="slide"><h1 className="slide-number"><img className="img" src="/images/slide1.jpg" alt="chromosome" height="500" width="800"/></h1></div>
    <div className="slide"><h1 className="slide-number"><img className="img" src="/images/scientist.jpg" alt="scientist" height="500" width="800"/></h1></div>
    <div className="slide"><h1 className="slide-number"><img className="img" src="/images/microscope1.jpg" alt="scientist at microscope" height="500" width="800"/></h1></div>
-   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/14.jpg" alt="scientist holding slide" height="500" width="800"/></h1></div>
+   {/* <div className="slide"><h1 className="slide-number"><img className="img" src="/images/14.jpg" alt="scientist holding slide" height="500" width="800"/></h1></div> */}
  </div>
 </div>
+<Link to="/dashboard">
+<button  className="btn btn-default" Link to="/dashboard">ENTER SITE</button>
+</Link>
 
-                <br/>
+<br/>
+<br/>
+
+
                     <div className="foot">
                         <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
                     </div>

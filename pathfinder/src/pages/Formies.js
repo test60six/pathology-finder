@@ -104,7 +104,7 @@ class Formies extends Component {
               <li><Link to="/form">Create Expirement</Link></li>
               <li><Link to="/results">Your Results</Link></li>
             </ul>
-            <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+            <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
           </div>
         </nav>
         <div className="App">
