@@ -11,7 +11,12 @@ class Dashboard extends Component {
 
   state = {
     experiments: '',
-    userID: 'Eddie'
+    userID: ''
+  }
+
+  logout = event => {
+    API.logoutUser()
+    .catch(err => console.log(err));
   }
 
   componentDidMount() {
@@ -35,7 +40,7 @@ class Dashboard extends Component {
             <li><Link to="/form">Create Expirement</Link></li>
             <li><Link to="/results">Your Results</Link></li>
         </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+        <button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><span className="glyphicon glyphicon-log-out"></span> Logout</button>
     </div>
 </nav> 
         <div className="row">
@@ -81,7 +86,7 @@ class Dashboard extends Component {
         <br/>
                 <br/>
                     <div className="foot">
-                        <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+                        <footer> &copy; 2018 Jason Young, Dennis Gruszka, Ed Hunter, Patrick Jones</footer>
                     </div>
       </div>
     );

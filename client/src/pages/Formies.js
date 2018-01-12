@@ -20,7 +20,7 @@ class Formies extends Component {
     question6: '',
     question7: '',
     experimentName: '',
-    userID: 'Eddie'
+    userID: ''
   };
 
   newControl = event => {
@@ -156,7 +156,6 @@ class Formies extends Component {
                     <input type="text" className="form-control" id="length" name="question7" onChange={this.handleInputChange} placeholder="mm"/>
                   </div>
                   <button type="submit" className="btn btn-default" name="submitData" onClick={this.handleFormSubmit}>Submit</button>
-                  <button type="submit" className="btn btn-default">Complete Submission</button>
                 </form>
               </div>
             </div>
@@ -164,7 +163,7 @@ class Formies extends Component {
         <br/>
         <br/>
         <div className="foot">
-            <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+            <footer> &copy; 2018 Jason Young, Dennis Gruszka, Ed Hunter, Patrick Jones</footer>
         </div>
       </div>
     );

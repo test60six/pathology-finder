@@ -29,18 +29,9 @@ var User = sequelize.define("user", {
         allowNull: false
     },
 
-    last_login: {
-        type: Sequelize.DATE
-    },
-
     institution: {
     	type: Sequelize.STRING
-	},
-
-    status: {
-        type: Sequelize.ENUM('active', 'inactive'),
-        defaultValue: 'active'
-    }
+	}
 });
 // Syncs with DB
 User.sync();

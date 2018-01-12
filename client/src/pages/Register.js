@@ -27,8 +27,8 @@ class Register extends Component {
     event.preventDefault();
     console.log(this.state);
     API.registerUser({
-      firstname: this.state.firstName,
-      lastname: this.state.lastName,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,

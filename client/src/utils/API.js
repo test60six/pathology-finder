@@ -5,22 +5,24 @@ export default {
     return axios.post("/api/new_data", data);
   },
   // Saves new treatment group data to the database
-  // newTreatment: function(data) {
-  //   return axios.post("/api/treatment", data);
-  // },
   newExperiment: function(data) {
-  	return axios.post("/api/experiments", data);
+  	return axios.post("/api/new_experiment", data);
   },
   // Get data
   getExperiments: function(data) {
   	return axios.get("/api/experiments/"+data);
   },
-  // getTreatmentData: function(data) {
-  // 	return axios.get("/api/treatment", data);
-  // },
-  // User Login
+  getExperimentByName: function(data) {
+    return axios.get("/api/experiments/"+data.experimentName+"/"+data.userID);
+  },
+  getData: function(data) {
+    return axios.get("api/data/"+data.experimentName+"/"+data.userID);
+  },
   loginUser: function(data) {
-  	return axios.get("/api/login", data);
+  	return axios.post("/api/login", data);
+  },
+  logoutUser: function() {
+    return axios.get("/logout");
   },
   registerUser: function(data) {
   	return axios.post("/api/register", data);

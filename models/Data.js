@@ -11,6 +11,9 @@ var Data = sequelize.define("data", {
   experimentName: {
     type: Sequelize.STRING
   },
+  userID: {
+    type: Sequelize.STRING
+  },
   group: {
     type: Sequelize.STRING
   },
