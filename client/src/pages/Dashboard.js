@@ -40,7 +40,7 @@ class Dashboard extends Component {
             <li><Link to="/form">Create Expirement</Link></li>
             <li><Link to="/results">Your Results</Link></li>
         </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><span className="glyphicon glyphicon-log-out"></span> Logout</button>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
     </div>
 </nav> 
         <div className="row">
