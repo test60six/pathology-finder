@@ -51,11 +51,11 @@ class Login extends Component {
   <div className="container">
     <div id="slideshow">
  <div class="slide-wrapper">
-   <div className="slide"><h1 class="slide-number"><img className="img-responsive" src="/images/7.PNG" alt="histology picture" /></h1></div>
-   <div className="slide"><h1 class="slide-number"><img className="img-responsive" src="/images/14.jpg" alt="histology picture" /></h1></div>
-   <div className="slide"><h1 class="slide-number"><img className="img-responsive" src="/images/19.PNG" alt="histology picture" /></h1></div>
-   <div className="slide"><h1 class="slide-number"><img className="img-responsive" src="/images/microscope1.jpg" alt="histology picture" /></h1></div>
-   <div className="slide"><h1 class="slide-number"><img className="img-responsive" src="/images/slide1" alt="histology picture" /></h1></div>
+   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/7.PNG" alt="micro tubes" height="500" width="800"/></h1></div>
+   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/slide1.jpg" alt="chromosome" height="500" width="800"/></h1></div>
+   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/scientist.jpg" alt="scientist" height="500" width="800"/></h1></div>
+   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/microscope1.jpg" alt="scientist at microscope" height="500" width="800"/></h1></div>
+   <div className="slide"><h1 className="slide-number"><img className="img" src="/images/14.jpg" alt="scientist holding slide" height="500" width="800"/></h1></div>
  </div>
 </div>
 
