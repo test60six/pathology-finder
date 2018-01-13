@@ -1,6 +1,5 @@
 var express = require("express");
 var session    = require('express-session');
-var cookieParser = require('cookie-parser');
 var bodyParser = require("body-parser");
 var User = require("./models/User.js");
 var env = require('dotenv').load();
@@ -13,35 +12,42 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-// Passport Setup
-// app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized:true})); // session secret
-// require('./config/passport.js')(passport, User);
-// app.use(passport.initialize());
-// app.use(passport.session());
-// Static directory
+
 app.use(express.static("public"));
+
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: false
+}));
 // Routes
 // ============================================================
 require("./routes/api-routes.js")(app);
 
-// Authorization check 
-// var auth = function(req, res, next) {
-// 	if (req.session && req.session.user) {
-// 		return next();
-// 	}
-// 	else {
-// 		return res.sendStatus(401);
-// 	}
-// };
+//Authorization check 
+var auth = function(req, res, next) {
+	if (req.session && req.session.user) {
+		return next();
+	}
+	else {
+		return res.sendStatus(401);
+	}
+};
+
+// Login endpoint
+app.get('/login', function (req, res) {
+  if (!req.query.username || !req.query.password) {
+    res.send('login failed');    
+  } else if(req.query.username === "amy" || req.query.password === "amyspassword") {
+    req.session.user = "amy";
+    req.session.admin = true;
+    res.send("login success!");
+  }
+});
 
 // app.get('/', function(req, res) {
 // 	sess=req.session;
 // })
-
-// app.get('/logout', function (req, res) {
-//     // req.session.destroy();
-//     res.redirect('/login');
-// });
 
 // app.get('/form', auth, function (req, res) {
 //     res.send("You can only see this after you've logged in.");

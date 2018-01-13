@@ -11,12 +11,7 @@ class Dashboard extends Component {
 
   state = {
     experiments: '',
-    userID: ""
-  }
-
-  checkSession = even => {
-    API.checkSession()
-    .catch(err => console.log(err));
+    userID: ''
   }
 
   logout = event => {
@@ -26,10 +21,19 @@ class Dashboard extends Component {
 
   componentDidMount() {
     console.log("This function runs "+this.state.userID);
-    API.getExperiments()
+    API.getUser()
     .then(res => {
-      console.log(res.data)
-      this.setState({experiments: res.data})
+      console.log(res);
+      if(res.data !== null) {
+        this.setState({userID: res.data});
+        console.log(res.data);
+        API.getExperiments({userID: this.state.userID})
+        .then(res => {
+          console.log(res.data)
+          this.setState({experiments: res.data})
+        })
+        .catch(err => console.log(err));
+      }
     })
     .catch(err => console.log(err));
   }
@@ -44,7 +48,7 @@ class Dashboard extends Component {
             <li><Link to="/form">Create Expirement</Link></li>
             <li><Link to="/results">Your Results</Link></li>
         </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><span className="glyphicon glyphicon-log-out"></span> Logout</button>
     </div>
 </nav> 
         <div className="row">
@@ -59,9 +63,7 @@ class Dashboard extends Component {
               <div className="panel-body">
                 <h3 id="expData" style={{color: '#666'}}>
                 Below you will find a full list of all the experiments you have submitted.  
-                Click on an experiment to graph the results!
                 </h3>
-                <button className="btn btn-default">Check session</button>
                 <br/>
                 {
                   this.state.experiments

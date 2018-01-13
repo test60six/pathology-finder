@@ -13,15 +13,6 @@ class Login extends Component {
     isLoggedIn: false
   };
 
-  changeStatus = event => {
-      if(this.state.isLoggedIn === false) {
-        this.setState({isLoggedIn: true});
-      }
-      else if(this.state.isLoggedIn === true) {
-        this.setState({isLoggedIn: false});
-      }
-  }
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -36,11 +27,10 @@ class Login extends Component {
     API.loginUser({email: this.state.email, password: this.state.password})
     .then(res => {
       console.log(res);
-      if(res.data === 'Login Success!') {
-        alert('Login Successful!')
-        this.setState({isLoggedIn: true})
+      if(res.data === "Login Success!") {
+        this.setState({isLoggedIn: true});
       }
-      else if(res.data === 'Login Failed!') {
+      else if(res.data === 'User not found!') {
         alert("Email and/or password incorrect!");
       }
     })
@@ -77,7 +67,6 @@ class Login extends Component {
               <div classname="col-md-4"></div>
             </div>
         </form>
-        <button className="btn btn-lg btn-block" type="submit" onClick={this.changeStatus}>Toggle Login Status</button>
         <br/>
         <br/>
         <div className="foot">

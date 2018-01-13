@@ -10,7 +10,7 @@ export default {
   },
   // Get data
   getExperiments: function(data) {
-  	return axios.get("/api/experiments");
+  	return axios.get("/api/experiments/"+data.userID);
   },
   getExperimentByName: function(data) {
     return axios.get("/api/experiments/"+data.experimentName+"/"+data.userID);
@@ -19,13 +19,13 @@ export default {
     return axios.get("api/data/"+data.experimentName+"/"+data.userID);
   },
   loginUser: function(data) {
-  	return axios.post("/api/login", data);
+  	return axios.post("/api/loginUser", data);
+  },
+  getUser: function() {
+    return axios.post("/api/getUser");
   },
   logoutUser: function() {
     return axios.get("/logout");
-  },
-  checkSession: function() {
-    return axios.get("/session_user");
   },
   registerUser: function(data) {
   	return axios.post("/api/register", data);

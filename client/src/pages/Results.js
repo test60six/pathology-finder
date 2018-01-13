@@ -20,7 +20,7 @@ class Results extends Component {
 	state = {
 		experimentName: '',
 		data: '',
-		userID: 'mrhunter83',
+		userID: '',
 		status: '',
 		cQ1: [],
 		cQ2: [],
@@ -38,6 +38,26 @@ class Results extends Component {
 		tQ7: [],
 		contTot: [],
 		treatTot: []
+	}
+
+	componentDidMount() {
+		API.getUser()
+    	.then(res => {
+	      if(res.data !== undefined) {
+	        this.setState({userID: res.data});
+	      }
+	      else {
+	      	return;
+	      }
+    	})
+    	.catch(err => console.log(err));
+	}
+
+	logout = event => {
+		API.logoutUser()
+		.then(res => {
+			alert("Logging Out");
+		})
 	}
 
 	// Change state on input
@@ -189,7 +209,7 @@ class Results extends Component {
 				            <li><Link to="/form">Create Expirement</Link></li>
 				            <li><Link to="/results">Your Results</Link></li>
 				        </ul>
-			        	<button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+			        	<button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
 			    	</div>
 				</nav>
 
