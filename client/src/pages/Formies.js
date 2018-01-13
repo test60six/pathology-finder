@@ -21,21 +21,26 @@ class Formies extends Component {
     question7: '',
     experimentName: '',
     userID: 'mrhunter83'
-  };
+  }
+
+  logout = event => {
+    API.logoutUser()
+    .catch(err => console.log(err));
+  }
 
   newControl = event => {
     if(this.state.experimentName) {
       this.setState({group: 'control'});
     }
     else {alert("Enter an experirment name before you define data type!")}
-  };
+  }
 
   newTreatment = event => {
     if(this.state.experimentName) {
       this.setState({group: 'treatment'});
     }
     else {alert("Enter an experirment name before you define a data type!")}
-  };
+  }
 
   newExperiment = event => {
     event.preventDefault();
@@ -104,7 +109,7 @@ class Formies extends Component {
               <li><Link to="/form">Create Expirement</Link></li>
               <li><Link to="/results">Your Results</Link></li>
             </ul>
-            <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+            <button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
           </div>
         </nav>
         <div className="App">
