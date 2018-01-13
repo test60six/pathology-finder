@@ -72,6 +72,7 @@ class Results extends Component {
   	// Submit form data (query databae for specified experiment)
 	handleFormSubmit = event => {
 		event.preventDefault();
+		console.log(this.state.experimentName);
 		API.getData({
 			experimentName: this.state.experimentName,
 			userID: this.state.userID
@@ -162,6 +163,9 @@ class Results extends Component {
 
 		// Clear state data
 		this.setState({
+			experimentName: '',
+			data: '',
+			status: '',
 			cQ1: [],
 			cQ2: [],
 			cQ3: [],
@@ -209,7 +213,7 @@ class Results extends Component {
 				            <li><Link to="/form">Create Expirement</Link></li>
 				            <li><Link to="/results">Your Results</Link></li>
 				        </ul>
-			        	<button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+			        	<button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
 			    	</div>
 				</nav>
 

@@ -20,7 +20,20 @@ class Formies extends Component {
     question6: '',
     question7: '',
     experimentName: '',
-    userID: 'mrhunter83'
+    userID: ''
+  }
+
+  componentDidMount() {
+    API.getUser()
+      .then(res => {
+        if(res.data !== undefined) {
+          this.setState({userID: res.data});
+        }
+        else {
+          return;
+        }
+      })
+      .catch(err => console.log(err));
   }
 
   logout = event => {
@@ -77,6 +90,7 @@ class Formies extends Component {
       if(this.state.group) {
       API.newData({
         experimentName: this.state.experimentName,
+        userID: this.state.userID,
         group: this.state.group,
         question1: this.state.question1,
         question2: this.state.question2,
@@ -109,7 +123,7 @@ class Formies extends Component {
               <li><Link to="/form">Create Expirement</Link></li>
               <li><Link to="/results">Your Results</Link></li>
             </ul>
-            <button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
+            <button type="submit" className="btn btn-default pull-right logoutButton" onClick={this.logout}><Link to="/"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
           </div>
         </nav>
         <div className="App">

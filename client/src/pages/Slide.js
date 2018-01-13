@@ -52,8 +52,8 @@ class Login extends Component {
    {/* <div className="slide"><h1 className="slide-number"><img className="img" src="/images/14.jpg" alt="scientist holding slide" height="500" width="800"/></h1></div> */}
  </div>
 </div>
-<Link to="/dashboard">
-<button  className="btn btn-default" style={{margin: '0 auto'}} Link to="/dashboard">ENTER SITE</button>
+<Link to="/login">
+<button  className="btn btn-default" style={{margin: '0 auto'}} Link to="/login">ENTER SITE</button>
 </Link>
 <br/>
 <br/>
