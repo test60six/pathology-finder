@@ -14,7 +14,7 @@ var User = sequelize.define("user", {
     },
 
     username: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING,
     },
 
     email: {

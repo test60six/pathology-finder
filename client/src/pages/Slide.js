@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard.js";
 import API from "../utils/API.js";
 import '../App.css';
 import '../index.css';
+
 class Login extends Component {
   state = {
     email: '',
@@ -52,12 +53,12 @@ class Login extends Component {
  </div>
 </div>
 <Link to="/dashboard">
-<button  className="btn btn-default" Link to="/dashboard">ENTER SITE</button>
+<button  className="btn btn-default" style={{margin: '0 auto'}} Link to="/dashboard">ENTER SITE</button>
 </Link>
 <br/>
 <br/>
                     <div className="foot">
-                        <footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+                        <footer> &copy; 2018 Jason Young, Dennis Gruszka, Ed Hunter, Patrick Jones</footer>
                     </div>
    </div>
    );

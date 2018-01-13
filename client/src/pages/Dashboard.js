@@ -11,7 +11,12 @@ class Dashboard extends Component {
 
   state = {
     experiments: '',
-    userID: ''
+    userID: ""
+  }
+
+  checkSession = even => {
+    API.checkSession()
+    .catch(err => console.log(err));
   }
 
   logout = event => {
@@ -20,27 +25,26 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    console.log("This function runs "+this.state.userID)
-    API.getExperiments(this.state.userID)
+    console.log("This function runs "+this.state.userID);
+    API.getExperiments()
     .then(res => {
       console.log(res.data)
       this.setState({experiments: res.data})
     })
     .catch(err => console.log(err));
-    console.log(this.state.userID);
   }
 
   render() {
     return(
       <div className="container">
         <nav className="navbar navbar-default">
-    <div className="container-fluid">
+      <div className="container-fluid">
         <ul className="nav navbar-nav globalNavbar">
             <li><Link to="/dashboard">Your Dashboard</Link></li>
             <li><Link to="/form">Create Expirement</Link></li>
             <li><Link to="/results">Your Results</Link></li>
         </ul>
-        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+        <button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
     </div>
 </nav> 
         <div className="row">
@@ -53,23 +57,24 @@ class Dashboard extends Component {
             <div className="panel panel-default">
               <div className="panel-heading">Welcome to your dashboard!</div>
               <div className="panel-body">
-                <h3 id="expData" style={{color: 'white'}}>
+                <h3 id="expData" style={{color: '#666'}}>
                 Below you will find a full list of all the experiments you have submitted.  
                 Click on an experiment to graph the results!
                 </h3>
+                <button className="btn btn-default">Check session</button>
                 <br/>
                 {
                   this.state.experiments
                     ? this.state.experiments.map((experiments) => 
-                      <Link to="/results"><div className="expPanel" onClick={this.graphResults}>
+                     <div className="expPanel">
                         <h3 key={experiments.experimentName.toString()}>
                         Experiment Name:<br/>
                         {experiments.experimentName}
                         </h3>
-                      </div></Link>
+                      </div>
                       )
                     : <div>
-                        <h3 style={{color: 'white'}}>OOPS! Looks like you don't have any experiments! 
+                        <h3 style={{color: '#666'}}>OOPS! Looks like you don't have any experiments! 
                         Click on "Create Experiment" in the navbar to submit data for a new experiment!
                         </h3>
                       </div>

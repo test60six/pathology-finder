@@ -23,15 +23,17 @@ module.exports = function(app) {
     })
   });
 
-  app.get("/api/experiments/:userID", function(req, res) {
-    Experiments.findAll({ where: {userID: req.params} })
+  app.get("/api/experiments", function(req, res) {
+    Experiments.findAll()
     .then(function(data) {
       res.json(data);
+    }).catch(function(err) {
+      console.log(err);
     })
   });
 
   app.get("/api/experiments/:experimentName/:userID", function(req, res) {
-    Experiments.findAll({ where: {experimentName: req.params.experimentName, userID: req.params.userID}})
+    Experiments.findAll({ where: {experimentName: req.params.experimentName, userID: req.params.userID} })
     .then(function(data) {
       res.json(data);
     })
@@ -41,6 +43,8 @@ module.exports = function(app) {
     Data.findAll({ where: {experimentName: req.params.experimentName, userID: req.params.userID} })
     .then(function(data) {
       res.json(data);
+    }).catch(function (err) {
+      res.send(err);
     })
   });
 
@@ -63,10 +67,10 @@ module.exports = function(app) {
     })
   })
 
-  app.get('/logout', function (req, res) {
-    req.session.destroy();
-    res.send("logout success!");
-  });
+  app.get('/session_user', function(req, res) {
+    console.log(req.session);
+    console.log(req.session.user);
+  })
 
 //   app.post('/api/register', passport.authenticate('local-signup', {
 //         successRedirect: '/dashboard',

@@ -11,7 +11,8 @@ var sequelize = new Sequelize("pathfinderDB", "root", "root", {
     max: 5,
     min: 0,
     idle: 10000
-  }
+  },
+  logging: console.log
 });
 // Exports the connection for other files to use
 module.exports = sequelize;

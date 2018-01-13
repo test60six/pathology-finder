@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import ReactTable from 'react-table';
+// import 'react-table/react-table.css';
 import Highcharts from 'highcharts';
 import Exporting from 'highcharts/modules/exporting';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -69,6 +71,7 @@ class Results extends Component {
 
 	// Grab data for specified experiment, and graph results
 	graphChart = event => {
+		if(this.state.data) {
 
 		var data = this.state.data;
 
@@ -157,9 +160,27 @@ class Results extends Component {
 			treatTot: []
 		})
 	}
+	else {alert("There is no data to chart! Retrieve an experiment first!")}
+	}
 
 	render() {
-		return(
+		// if (this.state.data) {
+
+		// 	const columns = [{
+		// 		Header: 'Subject',
+  //   			accessor: 'subject' // String-based value accessors!
+		// 	}, {
+		// 		Header: 'Experiment Name',
+		// 		accessor: 'experimentName',
+  //   			Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+		// 	}, {
+  //   			Header: 'Friend Name',
+  //   			accessor: d => d.friend.name // Custom value accessors!
+		// 		}, {
+  //   			Header: props => <span>Friend Age</span>, // Custom header components!
+  //   			accessor: 'friend.age'
+		// 	}]
+		return (
 			<div className="container">
 				<nav className="navbar navbar-default">
 			    	<div className="container-fluid">
@@ -168,7 +189,7 @@ class Results extends Component {
 				            <li><Link to="/form">Create Expirement</Link></li>
 				            <li><Link to="/results">Your Results</Link></li>
 				        </ul>
-			        	<button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span>Logout</Link></button>
+			        	<button type="submit" className="btn btn-default pull-right logoutButton"><Link to="/login"><span className="glyphicon glyphicon-log-out"></span> Logout</Link></button>
 			    	</div>
 				</nav>
 
@@ -189,7 +210,7 @@ class Results extends Component {
 				<br/>
 				<br/>
 				<div className="foot">
-					<footer> &copy; 2018 Jason Young,Dennis Gruszka,Ed Hunter,Patrick </footer>
+					<footer> &copy; 2018 Jason Young, Dennis Gruszka, Ed Hunter, Patrick Jones </footer>
 				</div>
 			</div>
 		);
